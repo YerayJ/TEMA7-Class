@@ -5,7 +5,7 @@ public class Main {
         Libro libro1 = new Libro("Peppa Pig", "Peppa Pig", 20, 10);
 
         if (libro1.prestamo()) {
-            System.out.println("Libro prestado");
+            System.out.println("Libro prestado ");
         } else {
             System.out.println("No hay ejemplares para prestar");
         }
