@@ -42,15 +42,14 @@ public class Libro {
 
     /**
      * Método que comprueba si se puede hacer el préstamo de un ejemplar
+     *
      * @return Devuelve si se ha podido realizar el préstamo
      */
     public boolean prestamo() {
-        boolean estado = true;
+        boolean estado = false;
 
-        if (ejemplares <= 0) {
-            estado = false;
-        }else {
-            ejemplares--;
+        if (ejemplaresPrestados < ejemplares) {
+            estado = true;
             ejemplaresPrestados++;
         }
 
@@ -59,15 +58,14 @@ public class Libro {
 
     /**
      * Método que devuelve un ejemplar
+     *
      * @return Devuelve si se ha podido realizar la operación
      */
     public boolean devolucion() {
-        boolean estado = true;
+        boolean estado = false;
 
-        if (ejemplaresPrestados <= 0) {
-            estado = false;
-        }else {
-            ejemplares++;
+        if (ejemplaresPrestados > 0) {
+            estado = true;
             ejemplaresPrestados--;
         }
 
