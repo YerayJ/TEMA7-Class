@@ -66,7 +66,7 @@ public class Articulo {
     public boolean vender(int cantidad) {
         boolean venta = false;
         // Comprueba si hay existencias
-        if (cuantosQuedan > 0) {
+        if (cuantosQuedan >= 0) {
             // Resta la cantidad vendida a las existencias
             this.cuantosQuedan-=cantidad;
             venta = true;
