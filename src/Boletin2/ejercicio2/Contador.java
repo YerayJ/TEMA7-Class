@@ -19,9 +19,11 @@ public class Contador {
      * @param cont Variable que contiene el contador
      */
     Contador(int cont) {
+        // Si el contador pasado es menor que 0 se inicializa a 0 nuevamente
         if (cont < 0) {
             this.cont = 0;
         } else {
+            // Si no se le da como valor al contador el pasado por parámetro
             this.cont = cont;
         }
     }
@@ -64,7 +66,9 @@ public class Contador {
      * Método que decrementa en uno el contador y comprueba que no sea negativo
      */
     public void decrementar() {
+        // Decrementa el contador
         cont--;
+        // Comprueba si el contador es menor que 0 y lo inicializa a 0 nuevamente
         if (cont < 0) {
             cont = 0;
         }
