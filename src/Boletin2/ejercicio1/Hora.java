@@ -94,14 +94,19 @@ public class Hora {
      * @param incrementa Parámetro que pasa el usuario en segundos
      */
     public void incrementaSegundo(int incrementa) {
+        // Se añade la cantidad pasada por parámetros al atributo seg
         seg += incrementa;
+        // Comprueba si los segundos son mayor-igual a 60
         if (seg >= 60) {
+            // Añade un minuto
             min++;
+            // Y le resta 60 a lo segundos
             seg -= 60;
-        } else if (min >= 60) {
+        } else if (min >= 60) { // Comprueba si los minutos son mayor-igual a 60
             hora++;
             min -= 60;
-        } else if (hora > 23) {
+        } else if (hora > 23) { // Comprueba si la hora es mayor a 23
+            // Inicia la hora a 0
             hora = 0;
         }
     }
