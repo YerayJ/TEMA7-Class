@@ -97,10 +97,14 @@ public class Fecha {
      * @return Devuelve si el año es bisiesto mediante true o false
      */
     public boolean esBisiesto() {
+        // Variable auxiliar booleana para saber si el año es bisiesto
         boolean estado = false;
+        // Comprueba si el año es divisible entre 4
         if (this.anho % 4 == 0) {
+            // En ese caso es true
             estado = true;
         }
+        // Devuelve el estado
         return estado;
     }
 
@@ -110,8 +114,11 @@ public class Fecha {
      * @return Devuelve si la fecha es correcta o no mediante un booleano
      */
     public boolean fechaCorrecta() {
+        // Variable auxiliar booleana para saber si la fecha tiene el formato correcto
         boolean estado = false;
+        // Comprueba si el día es mayor que 1
         if (this.dia > 1) {
+            // El switch tiene como parámetro el mes
             switch (this.mes) {
                 case 1: {
                 }
@@ -126,12 +133,14 @@ public class Fecha {
                 case 10: {
                 }
                 case 12: {
+                    // Los meses 1,3,5,7,8,10,12 tienen los días hasta el 31
                     if (this.dia <= 31) {
                         estado = true;
                     }
                     break;
                 }
                 case 2: {
+                    // El mes dos llega hasta el día 28 o hasta el día 29 en caso de que sea bisiesto
                     if ((esBisiesto() && this.dia == 29) || this.dia <= 28) {
                         estado = true;
                     }
@@ -144,6 +153,7 @@ public class Fecha {
                 case 9: {
                 }
                 case 11: {
+                    // Los meses 4,6,9,11 tienen los días hasta el 30
                     if (this.dia <= 30) {
                         estado = true;
                     }
@@ -151,6 +161,7 @@ public class Fecha {
                 }
             }
         }
+        // Devuelve el estado
         return estado;
     }
 
@@ -158,7 +169,9 @@ public class Fecha {
      * Método que suma el día y comprueba que la fecha sea correcta
      */
     public void diaSiguiente() {
+        // Le añade a la variable dia uno
         dia++;
+        // El switch recibe como parámetro el mes
         switch (this.mes) {
             case 1: {
             }
@@ -173,15 +186,19 @@ public class Fecha {
             case 10: {
             }
             case 12: {
-                if (this.dia == 31) {
+                // Si los meses 1,3,5,7,8,10,12 llegan a mayor que 31 el día se reinicia y se añade un mes
+                if (this.dia > 31) {
                     dia = 1;
                     mes++;
                 }
                 break;
             }
             case 2: {
-                if ((esBisiesto() && this.dia == 29) || this.dia == 28) {
+                // Comprueba si el día no entra en el mes
+                if ((esBisiesto() && this.dia > 29) || this.dia > 28) {
+                    // Se reinicia los días
                     dia = 1;
+                    // Se avanza de mes
                     mes++;
                 }
                 break;
@@ -193,36 +210,50 @@ public class Fecha {
             case 9: {
             }
             case 11: {
-                if (this.dia == 30) {
+                // Comprueba si los meses 4,6,9,11 superan el día 30
+                if (this.dia > 30) {
+                    // Se reinicia los días
                     dia = 1;
+                    // Se avanza de mes
                     mes++;
                 }
                 break;
             }
         }
+        // Comprueba si el mes es mayor que 12
         if (mes > 12) {
+            // Se añade un año
             anho++;
+            // Se reinician los meses
             mes = 1;
         }
     }
 
     /**
      * Método que pasa a una String la fecha y comprueba si el día y el mes
+     *
      * @return Devuelve el resultado con la fecha
      */
     public String toString() {
+        // Variable que irá guardando la fecha
         String res = "";
+        // Comprueba si el número es de una cifra
         if (dia <= 9) {
+            // Le añade 0 por delante
             res += "0";
         }
-            res += dia + ":";
-
+        // A continuación añade el día y dos puntos
+        res += dia + ":";
+        // Comprueba si el número es de una cifra
         if (mes <= 9) {
+            // Le añade 0 por delante
             res += "0";
         }
-            res += mes + ":";
-
+        // A continuación añade el mes y dos puntos
+        res += mes + ":";
+        // Por último añade el año
         res += anho;
+        // Devuelve el resultado
         return res;
     }
 }
