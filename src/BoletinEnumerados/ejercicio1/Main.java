@@ -29,6 +29,8 @@ public class Main {
         transacciones(cc);
         transacciones(cc2);
 
+        // Cierre de escáner
+        key.close();
     }
 
     private static void transacciones(CuentaCorriente cc) {

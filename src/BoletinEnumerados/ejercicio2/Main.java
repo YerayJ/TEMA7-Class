@@ -26,6 +26,9 @@ public class Main {
 
         prestamosLibros(libro1);
         prestamosLibros(libro2);
+
+        // Cierre de escáner
+        key.close();
     }
 
     private static void prestamosLibros(Libro libro1) {

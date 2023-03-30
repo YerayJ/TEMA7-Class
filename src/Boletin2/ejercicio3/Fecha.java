@@ -7,15 +7,15 @@ public class Fecha {
     /**
      * Atributo que contiene el día en formato entero
      */
-    private int dia;
+    private int dia = 1;
     /**
      * Atributo que contiene el mes en formato entero
      */
-    private int mes;
+    private int mes = 1;
     /**
      * Atributo que contiene el año en formato entero
      */
-    private int anho;
+    private int anho = 1970;
 
     /**
      * Constructor por defecto
@@ -117,22 +117,10 @@ public class Fecha {
         // Variable auxiliar booleana para saber si la fecha tiene el formato correcto
         boolean estado = false;
         // Comprueba si el día es mayor que 1
-        if (this.dia > 1) {
+        if (this.dia >= 1) {
             // El switch tiene como parámetro el mes
             switch (this.mes) {
-                case 1: {
-                }
-                case 3: {
-                }
-                case 5: {
-                }
-                case 7: {
-                }
-                case 8: {
-                }
-                case 10: {
-                }
-                case 12: {
+                case 1,3,5,7,8,10,12: {
                     // Los meses 1,3,5,7,8,10,12 tienen los días hasta el 31
                     if (this.dia <= 31) {
                         estado = true;
@@ -141,18 +129,12 @@ public class Fecha {
                 }
                 case 2: {
                     // El mes dos llega hasta el día 28 o hasta el día 29 en caso de que sea bisiesto
-                    if ((esBisiesto() && this.dia == 29) || this.dia <= 28) {
+                    if ((esBisiesto() && this.dia <= 29) || this.dia <= 28) {
                         estado = true;
                     }
                     break;
                 }
-                case 4: {
-                }
-                case 6: {
-                }
-                case 9: {
-                }
-                case 11: {
+                case 4,6,9,11: {
                     // Los meses 4,6,9,11 tienen los días hasta el 30
                     if (this.dia <= 30) {
                         estado = true;
@@ -173,19 +155,7 @@ public class Fecha {
         dia++;
         // El switch recibe como parámetro el mes
         switch (this.mes) {
-            case 1: {
-            }
-            case 3: {
-            }
-            case 5: {
-            }
-            case 7: {
-            }
-            case 8: {
-            }
-            case 10: {
-            }
-            case 12: {
+            case 1,3,5,7,8,10,12: {
                 // Si los meses 1,3,5,7,8,10,12 llegan a mayor que 31 el día se reinicia y se añade un mes
                 if (this.dia > 31) {
                     dia = 1;
@@ -203,13 +173,7 @@ public class Fecha {
                 }
                 break;
             }
-            case 4: {
-            }
-            case 6: {
-            }
-            case 9: {
-            }
-            case 11: {
+            case 4,6,9,11: {
                 // Comprueba si los meses 4,6,9,11 superan el día 30
                 if (this.dia > 30) {
                     // Se reinicia los días
@@ -243,14 +207,14 @@ public class Fecha {
             res += "0";
         }
         // A continuación añade el día y dos puntos
-        res += dia + ":";
+        res += dia + "-";
         // Comprueba si el número es de una cifra
         if (mes <= 9) {
             // Le añade 0 por delante
             res += "0";
         }
         // A continuación añade el mes y dos puntos
-        res += mes + ":";
+        res += mes + "-";
         // Por último añade el año
         res += anho;
         // Devuelve el resultado
