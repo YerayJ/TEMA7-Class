@@ -1,4 +1,4 @@
-package ejercicioscrud;
+package ejercicioscrud.ejercicio1;
 
 import java.util.Scanner;
 
@@ -72,7 +72,6 @@ public class Main {
             System.out.println("\nPulse una tecla para continuar");
             key.next();
         } while (opc != 5);
-
 
     }
 

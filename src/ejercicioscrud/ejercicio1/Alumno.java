@@ -1,4 +1,4 @@
-package ejercicioscrud;
+package ejercicioscrud.ejercicio1;
 
 public class Alumno {
     /**
