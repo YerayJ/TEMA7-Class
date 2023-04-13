@@ -137,4 +137,18 @@ public class Articulo {
     public void setStock(int stock) {
         this.stock = stock;
     }
+
+    /**
+     * Método toString que devuelve una cadena con todos los atributos
+     * @return Devuelve una cadena con los atributos
+     */
+    public String toString() {
+        return "Articulo{" +
+                "Código=" + codigo +
+                ", Descripción='" + descripcion + '\'' +
+                ", Precio compra=" + precioCompra +
+                ", Precio venta=" + precioVenta +
+                ", Stock=" + stock +
+                '}';
+    }
 }
