@@ -52,10 +52,10 @@ public class Articulo {
         if (precioVenta < 0) {
             this.precioVenta = 0;
         }
+        this.stock = stock;
         if (stock < 0) {
             this.stock = 0;
         }
-        this.stock = stock;
     }
 
     /**
