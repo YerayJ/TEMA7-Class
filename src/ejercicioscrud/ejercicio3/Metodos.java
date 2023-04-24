@@ -2,7 +2,7 @@ package ejercicioscrud.ejercicio3;
 
 import java.util.Arrays;
 
-public class Metodos {
+class Metodos {
     static public void menu() {
         System.out.println("--------MENÚ--------" +
                 "\n1. Listado de pizzas." +
