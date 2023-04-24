@@ -96,7 +96,7 @@ public class Main {
                     entradaArticulo(codigo, stock);
                 }
                 case 6 -> {
-                    System.out.println("Deme el código del artículo para sacar stock: ");
+                    System.out.println("Deme el código del artículo para sacar   stock: ");
                     codigo = key.nextInt();
                     System.out.println("Deme cuanto stock quiere sacar: ");
                     stock = key.nextInt();
@@ -139,7 +139,7 @@ public class Main {
         // Recorre el array
         for (int pos = 0; pos < articulos.length; pos++) {
             // Imprime el alumno completo
-            System.out.println((pos + 1) + "Artículos: "
+            System.out.println((pos + 1) + " Artículos: "
                     + " Código " + articulos[pos].getCodigo()
                     + " Descripción: " + articulos[pos].getDescripcion()
                     + " PrecioCompra: " + articulos[pos].getPrecioCompra()
